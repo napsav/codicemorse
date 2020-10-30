@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/onsenui.min.css">
+  <link rel="stylesheet" href="css/onsen-css-components.min.css">
+  <script src="js/onsenui.min.js"></script>
+  
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traduttore Codice Morse</title>
+
+
+</head>
+<body>
+<ons-page>
+<ons-card>
+<div class="title">
+Traduttore codice morse
+</div>
+<div class="content">
+	<p>Per la traduzione da codice ad alfabeto tra ogni lettera ci deve essere uno spazio, mentre alla fine di ogni parola ci deve essere uno /. Ad esempio -.-. .. .- --- / .- verrà tradotto come 'ciao a'.</p>
+	
+</div>
+</ons-card>
+  <div style="text-align: center; margin-top: 30px;">
+    <p>
+      <ons-input id="testo" modifier="material" placeholder="Inserisci qui il messaggio" float></ons-input>
+    </p>
+  <ons-list>
+    <ons-list-item tappable>
+      <label class="left">
+        <ons-radio name="opzione" input-id="radio-1" value="alfabetomorse" checked></ons-radio>
+      </label>
+      <label for="radio-1" class="center">
+        Alfabeto a morse
+      </label>
+    </ons-list-item>
+    <ons-list-item tappable>
+      <label class="left">
+        <ons-radio name="opzione" input-id="radio-2" value="morsealfabeto"></ons-radio>
+      </label>
+      <label for="radio-2" class="center">
+        Morse ad alfabeto
+      </label>
+    </ons-list-item>
+  </ons-list>
+    <p style="margin-top: 30px;">
+      <ons-button onclick="clickhandler()">Traduci</ons-button>
+    </p>
+	<p style="font-size:24px" id="output">Qui il messaggio tradotto...</p>
+	<ons-button onclick="copyclip()">Copia</ons-button>
+  </div>
+	<p style="margin-left: 30px">Che separatore (tra le singole lettere) vuoi usare?</p>
+  <ons-list>
+    <ons-list-item tappable>
+      <label class="left">
+        <ons-radio id="sep-radio" name="opzionesep" input-id="radio-sep1" value=" " checked></ons-radio>
+      </label>
+      <label for="radio-sep1" class="center">
+        Spazio
+      </label>
+    </ons-list-item>
+    <ons-list-item tappable>
+      <label class="left">
+        <ons-radio name="opzionesep" input-id="radio-sep2" value="|"></ons-radio>
+      </label>
+      <label for="radio-sep2" class="center">
+        |
+      </label>
+    </ons-list-item>
+  </ons-list>
+<p style="margin-left:30px">By Saverio Napolitano - <a href="https://github.com/napsav/codicemorse">Vedi su GitHub</a></p>
+</ons-page>
+
+<script src="cordova.js"></script>
+<script src="js/traduttore.js"></script>
+</body>
